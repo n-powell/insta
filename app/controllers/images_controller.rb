@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all
+    @user = current_user
   end
 
   private

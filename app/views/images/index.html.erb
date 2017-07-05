@@ -1,1 +1,7 @@
 <h1>Instagraham</h1>
+
+<% @user.images.each do |image|%>
+  <li><h2><%= (image.title) %></h2>
+    <%= image_tag(image.src)%>
+  </li>
+<% end %>
