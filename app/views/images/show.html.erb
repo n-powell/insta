@@ -1,0 +1,7 @@
+<h2><%= @image.title %></h2>
+<%= image_tag(@image.src)%>
+<p>by: <%= @user.email%></p>
+<% if @user == current_user%>
+<%= link_to "Edit image", edit_user_image_path(@user, @image)%>
+<%= link_to "Delete image", user_image_path(@user, @image), method: "delete"%>
+<% end %>
