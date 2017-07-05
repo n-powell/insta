@@ -1,5 +1,7 @@
 <h1>Instagraham</h1>
 
+<%= link_to "Add Image", new_user_image_path(@user)%>
+
 <% @user.images.each do |image|%>
   <li><h2><%= (image.title) %></h2>
     <%= image_tag(image.src)%>
