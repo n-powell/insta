@@ -1,0 +1,8 @@
+<%= form_for [@user, @image] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label "Image upload coming soon."%>
+
+<%= f.hidden_field :src, value: '/assets/images/fillmurray.jpg'%>
+<%= f.submit %>
+<% end %>
