@@ -1,6 +1,7 @@
 <%= link_to "Add Image", new_user_image_path(@user)%>
+<%= link_to "Sign Out PLEEEEASE?", destroy_user_session_path(@user), method: :delete%>
 
-<% @user.images.each do |image|%>
+<% @images.each do |image|%>
   <div class="image">
     <%= link_to(user_image_path(@user, image)) do %>
       <h2><%= (image.title) %></h2>
