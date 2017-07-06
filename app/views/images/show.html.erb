@@ -9,6 +9,14 @@
 <%= render "comment_form"%>
 <ul>
   <% @image.comments.each do |comment|%>
-    <li>"<%= comment.text%>" - <%= comment.user.email%></li>
+    <% if comment.id%>
+      <li>
+        "<%= comment.text%>" -
+        <%= link_to comment.user.email, user_path(comment.user)%>
+        <% if comment.id && @current_user == comment.user %>
+          <%= link_to "Delete comment", image_comment_path(@image, comment), method: "delete" %>
+        <% end %>
+      </li>
+    <% end%>
   <% end %>
 </ul>

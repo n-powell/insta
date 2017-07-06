@@ -5,12 +5,22 @@ class CommentsController < ApplicationController
     @comment = @image.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      byebug
       redirect_to user_image_path(@user, @image)
     else
-      byebug
       redirect_to user_image_path(@user, @image)
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    image = @comment.image
+    user = image.user
+    @comment.destroy
+    redirect_to user_image_path(user, image)
+  end
+
+  def Edit
+
   end
 
   private

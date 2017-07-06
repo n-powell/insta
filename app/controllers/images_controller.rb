@@ -29,7 +29,7 @@ class ImagesController < ApplicationController
     @image = @user.images.find(params[:id])
     @new_comment = @image.comments.new
     @new_comment.user = current_user
-    byebug
+    @current_user = current_user
   end
 
   def edit
