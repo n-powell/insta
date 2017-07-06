@@ -27,6 +27,9 @@ class ImagesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @image = @user.images.find(params[:id])
+    @new_comment = @image.comments.new
+    @new_comment.user = current_user
+    byebug
   end
 
   def edit

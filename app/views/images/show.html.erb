@@ -5,3 +5,10 @@
 <%= link_to "Edit image", edit_user_image_path(@user, @image)%>
 <%= link_to "Delete image", user_image_path(@user, @image), method: "delete"%>
 <% end %>
+<h3>Comment</h3>
+<%= render "comment_form"%>
+<ul>
+  <% @image.comments.each do |comment|%>
+    <li>"<%= comment.text%>" - <%= comment.user.email%></li>
+  <% end %>
+</ul>
