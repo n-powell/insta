@@ -1,4 +1,8 @@
 class ImagesController < ApplicationController
+  before_action do
+    redirect_to new_user_session_path unless current_user
+  end
+
   def new
     @user = current_user
     @image = @user.images.new
@@ -17,9 +21,6 @@ class ImagesController < ApplicationController
   end
 
   def index
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
     @images = Image.all
     @user = current_user
   end

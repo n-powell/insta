@@ -19,9 +19,6 @@ class CommentsController < ApplicationController
     redirect_to user_image_path(user, image)
   end
 
-  def Edit
-
-  end
 
   private
   def comment_params

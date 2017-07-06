@@ -9,7 +9,7 @@
 <%= render "comment_form"%>
 <ul>
   <% @image.comments.each do |comment|%>
-    <% if comment.id%>
+  <% if comment.id%>
       <li>
         "<%= comment.text%>" -
         <%= link_to comment.user.email, user_path(comment.user)%>
