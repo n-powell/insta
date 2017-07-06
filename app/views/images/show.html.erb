@@ -1,6 +1,6 @@
 <h2><%= @image.title %></h2>
 <%= image_tag @image.file.url%>
-<p>by: <%= @user.email%></p>
+<p>by: <%= link_to @user.email, user_path(@user)%></p>
 <% if @user == current_user%>
 <%= link_to "Edit image", edit_user_image_path(@user, @image)%>
 <%= link_to "Delete image", user_image_path(@user, @image), method: "delete"%>
